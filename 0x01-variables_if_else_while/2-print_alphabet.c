@@ -10,7 +10,7 @@ int main (void)
 {
 	int alp;
 
-	for (alp = "a";alp<="z";alp++)
+	for (alp = 97;alp<=122;alp++)
 	{
 		putchar(alp);
 	}
