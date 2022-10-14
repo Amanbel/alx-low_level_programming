@@ -16,7 +16,7 @@ int main(void)
 
 		if (he == 57)
 		{
-			for (de = 97; de <= 122; de++)
+			for (de = 97; de <= 102; de++)
 			{
 				putchar(de);
 			}
