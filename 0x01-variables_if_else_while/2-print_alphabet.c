@@ -6,11 +6,11 @@
  * Return: 0 (Success)
  */
 
-int main (void)
+int main(void)
 {
 	int alp;
 
-	for (alp = 97;alp<=122;alp++)
+	for (alp = 97; alp <= 122; alp++)
 	{
 		putchar(alp);
 	}
