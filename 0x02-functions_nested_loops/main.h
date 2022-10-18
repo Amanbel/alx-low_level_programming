@@ -10,6 +10,8 @@ void print_alphabet(void)
 		i++;
 	}
 
+	putchar(10);
+
 	return;
 }
 void printall(void)
