@@ -3,7 +3,7 @@
 /**
  * main - Entry Point
  * Discription: fibonacci numbers
- * Return: Nothing
+ * Return: 0 (Success)
  */
 
 int main(void)
@@ -21,4 +21,6 @@ int main(void)
 		f1 = f2;
 		f2 = nex;
 	}
+
+	return (0);
 }
