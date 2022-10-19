@@ -10,8 +10,6 @@
 
 int print_last_digit(int a)
 {
-	int y;
-
 	if (a < 0)
 	{
 		a = a * -1;
