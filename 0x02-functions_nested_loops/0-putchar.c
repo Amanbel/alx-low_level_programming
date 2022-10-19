@@ -1,4 +1,3 @@
-#include<stdio.h>
 #include "main.h"
 
 /**
@@ -9,8 +8,14 @@
 
 int main(void)
 {
+	char w[] = "_putchar";
+	int i;
 
-	printall();
+	for (i = 0; i < 9; i++)
+	{
+		_putchar(c[i]);
+	}
+	_putchar('\n');
 
 	return (0);
 }
