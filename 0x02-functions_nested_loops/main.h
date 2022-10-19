@@ -1,4 +1,4 @@
 #include<stdio.h>
-#include "main.c"
+#include "head.c"
 
 void print_alphabet(void);
