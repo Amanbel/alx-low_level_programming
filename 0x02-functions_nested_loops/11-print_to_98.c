@@ -4,6 +4,7 @@
 /**
  * print_to_98 - Entry Point
  * Discription: upto 98
+ * @n: number
  * Return: Nothing
  */
 
@@ -15,21 +16,23 @@ void print_to_98(int n)
 		{
 			_putchar(n);
 			if (n != 98)
-				_putchar(', ');
+				_putchar(',');
+				_putchar(' ');
 		}
 	}
 	else if (n < 98)
 	{
-		for(n = n; n <= 98; n++)
+		for (n = n; n <= 98; n++)
 		{
 			_putchar(n);
 			if (n != 98)
-				_putchar(', ');
+				_putchar(',');
+				_putchar(' ');
 		}
 	}
 	else
 	{
-		_putchar('98');
+		_putchar(n);
 	}
 	_putchar('\n');
 }
