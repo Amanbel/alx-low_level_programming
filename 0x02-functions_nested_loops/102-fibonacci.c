@@ -8,9 +8,10 @@
 
 int main(void)
 {
-	int f1 = 0;
-	int f2 = 1;
-	int i, nex;
+	long int f1 = 0;
+	long int f2 = 1;
+	long int nex;
+	int i;
 
 	for (i = 1; i < 50; i++)
 	{
