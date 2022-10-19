@@ -4,12 +4,17 @@
 /**
  * main - Entry Point
  * Discription: print alphabet
- * Return: 0 (Success)
+ * Return: Nothing
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
+	int i = 97;
 
-	return (0);
+	while (i <= 122)
+	{
+		_putchar(i);
+	}
+
+	_putchar(10);
 }
