@@ -15,7 +15,7 @@ int main(void)
 
 	for (i = 1; i < 50; i++)
 	{
-		printf("%d, ", f2);
+		printf("%ld, ", f2);
 
 		nex = f1 + f2;
 
