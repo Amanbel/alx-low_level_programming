@@ -6,7 +6,7 @@
  * Return: 0 (Success)
  */
 
-int main(void)
+void print_alphabet(void)
 {
 	int i = 97;
 
