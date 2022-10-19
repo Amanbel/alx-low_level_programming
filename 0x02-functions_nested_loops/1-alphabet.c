@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - Entry Point
+ * print_alphabet- Entry Point
  * Discription: print alphabet
  * Return: Nothing
  */
@@ -14,6 +14,7 @@ void print_alphabet(void)
 	while (i <= 122)
 	{
 		putchar(i);
+		i++;
 	}
 
 	putchar(10);
