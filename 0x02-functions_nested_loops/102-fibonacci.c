@@ -13,10 +13,10 @@ int main(void)
 	long int nex;
 	int i;
 
-	for (i = 1; i <= 51; i++)
+	for (i = 1; i <= 50; i++)
 	{
 		printf("%ld", f2);
-		if (i != 51)
+		if (i != 50)
 		{
 			printf(", ");
 		}
