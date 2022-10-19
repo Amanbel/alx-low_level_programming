@@ -4,6 +4,7 @@
 /**
  * _islower - Entry Point
  * Discription: check letter case
+ * @c: character to test
  * Return: Nothing
  */
 
