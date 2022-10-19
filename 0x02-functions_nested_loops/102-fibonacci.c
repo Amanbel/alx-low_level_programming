@@ -15,8 +15,11 @@ int main(void)
 
 	for (i = 1; i <= 51; i++)
 	{
-		printf("%ld, ", f2);
-
+		printf("%ld", f2);
+		if (i != 51)
+		{
+			printf(", ");
+		}
 		nex = f1 + f2;
 
 		f1 = f2;
