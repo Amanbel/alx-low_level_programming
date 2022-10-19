@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry Point
@@ -6,16 +7,9 @@
  * Return: 0 (Success)
  */
 
-void print_alphabet(void)
+int main(void)
 {
-	int i = 97;
+	print_alphabet();
 
-	while (i <= 122)
-	{
-		putchar(i);
-		i++;
-	}
-	putchar(10);
-
-	return;
+	return (0);
 }
