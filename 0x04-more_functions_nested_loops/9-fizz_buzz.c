@@ -11,15 +11,12 @@ int main(void)
 {
 	int i;
 
-	for (i = 1; i <= 99; i++)
+	for (i = 1; i <= 100; i++)
 	{
 		if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			printf("FizzBuzz");
-			if (i != 99)
-			{
-				printf(" ");
-			}
+			printf("FizzBuzz ");
+
 		}
 		else if (i % 3 == 0)
 		{
@@ -27,7 +24,11 @@ int main(void)
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (i != 100)
+			{
+				printf(" ");
+			}
 		}
 		else
 		{
