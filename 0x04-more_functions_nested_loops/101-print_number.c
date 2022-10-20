@@ -30,7 +30,9 @@ void print_number(int n)
 		tmp = tmp / 10;
 	}
 	for (count = 1; count < b; count++)
+	{
 		pow = pow * 10;
+	}
 		while (pow > 1)
 		{
 			_putchar((a / pow) % 10 + '0');
@@ -40,4 +42,3 @@ void print_number(int n)
 	_putchar(a % 10 + '0');
 
 	}
-}
