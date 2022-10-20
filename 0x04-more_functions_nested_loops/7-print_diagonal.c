@@ -20,9 +20,11 @@ void print_diagonal(int n)
 	{
 		for (j = 0; j <= i; j++)
 		{
+			if (i != j)
+			{
 			_putchar(' ');
-
-			if (i == j)
+			}
+			else if (i == j)
 			{
 				_putchar('\\');
 			}
