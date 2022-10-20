@@ -9,8 +9,8 @@
 
 int main(void)
 {
-	int i;
-	int j = 612852475143;
+	long int i;
+	long int j = 612852475143;
 
 	for (i = 2; i < j; i++)
 	{
