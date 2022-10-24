@@ -2,7 +2,8 @@
 #include <string.h>
 #include "main.h"
 
-/** puts2 - prints the even index of a string
+/**
+ * puts2 - prints the even index of a string
  * @str:the string
  * Return: Nothing
  */
