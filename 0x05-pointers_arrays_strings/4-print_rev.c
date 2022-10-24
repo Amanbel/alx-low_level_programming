@@ -10,10 +10,10 @@
 
 void print_rev(char *s)
 {
-	unsigned long int i;
-	unsigned long int n = 0;
+	int i;
+	int n = strlen(s);
 
-	for (i = strlen(s) - 1; i >= n; i--)
+	for (i = n - 1; i >= 0; i--)
 	{
 		putchar(s[i]);
 	}
