@@ -19,6 +19,7 @@ int _strlen(char *s)
 			n++;
 		}
 		else
+		{
 			return (n);
 		}
 	}
