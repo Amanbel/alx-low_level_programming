@@ -1,0 +1,11 @@
+#!/bin/bash
+echo enter file name
+read FNAME
+echo enter git message
+read MSG
+
+git add $FNAME
+git commit -m $MSG
+git push
+
+echo "your file $FNAME has been pushed to the repo"
