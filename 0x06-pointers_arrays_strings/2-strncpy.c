@@ -4,9 +4,9 @@
 
 /**
  * _strncpy - copys one string to another
- * @dest - destination
- * @src - source
- * @n - number of copys
+ * @dest:destination
+ * @src:source
+ * @n:number of copys
  * Return: destination string
  */
 
@@ -19,5 +19,5 @@ char *_strncpy(char *dest, char *src, int n)
 	for ( ; i < n; i++)
 		dest[i] = '\0';
 
-	return dest;
+	return (dest);
 }
