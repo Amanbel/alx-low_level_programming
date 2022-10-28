@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * print_number - prints # using _putchar function
+ * print_number - prints a number
  * @n: the integer to print
- *
  * Return: void
  */
- 
+
 void print_number(int n)
 {
 	int copy, nth, size = 1, ones = n % 10;
 
-	n /= 10;
+	n = n / 10;
 	copy = n;
 	if (ones < 0)
 	{
