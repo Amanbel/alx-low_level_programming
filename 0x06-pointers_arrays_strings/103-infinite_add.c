@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- * infinite_add - adds values of two strings together
- * @n1: first string of integers
- * @n2: second string of ints
+ * infinite_add - adds two strings
+ * @n1: first string
+ * @n2: second string
  * @r: result string
- * @size_r: size of result string
- *
+ * @size_r: size of string
  * Return: void
  */
- 
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int len1 = 0, num1 = 0, sum1 = 0;
