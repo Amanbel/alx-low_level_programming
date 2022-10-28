@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 
 /**
  * print_buffer - prints string and buffer sizes
@@ -14,7 +14,7 @@ void print_buffer(char *b, int size)
 
 	while (j < size)
 	{
-		printf("000000%02x:", j);
+		printf("000000%02x: ", j);
 		count = 0;
 			while (count < 10)
 			{
