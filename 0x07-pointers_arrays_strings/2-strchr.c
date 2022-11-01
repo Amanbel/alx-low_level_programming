@@ -12,7 +12,7 @@
 char *_strchr(char *s, char c)
 {
 	int i, j;
-	char m[];
+	char *m;
 	int n = strlen(s);
 	int k = 0;
 
@@ -22,7 +22,7 @@ char *_strchr(char *s, char c)
 		{
 			for (j = i; j < n; j++)
 			{
-				m[k] = *(s + j);
+				m[k] = s[j];
 				k++;
 				if (j == (n - 1))
 				{
