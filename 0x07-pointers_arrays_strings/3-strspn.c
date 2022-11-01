@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 	int i, j;
 	int n = strlen(s);
 	int m = strlen(accept);
-	int k = 0;
+	unsigned long int k = 0;
 
 	for (i = 0; i < m; i++)
 	{
