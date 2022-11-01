@@ -10,7 +10,9 @@
 
 void print_diagsums(int *a, int size)
 {
-	int prc, sum1, sum2, diagc, diagc2, row = 0;
+	int prc, sum1, sum2, diagc, diagc2, row;
+
+	prc = 0, sum1 = 0, sum2 = 0, diagc = 0, diagc2 = 0, row = 0;
 
 	while (prc < size * size)
 	{
