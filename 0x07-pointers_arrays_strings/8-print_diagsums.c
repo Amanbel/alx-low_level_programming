@@ -10,20 +10,18 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i = 0;
-	int j = ((size * size) - 1);
-	int sum = 0;
-	int sum2 = 0;
+	int prc, sum1, sum2, diagc, diagc2, row = 0;
 
-	while (i < (size * size))
+	while (prc < size * size)
 	{
-		sum += a[i][i];
-		i++;
+		if (prc == diagc + (row * size))
+			sum1 += a[prc];
+		if (prc == (size - diagc2 - 1) + (row * size))
+			sum2 += a[prc];
+		if (((prc + 1) % size) == 0)
+			row++, diag++, diagc2++;
+		prc++;
 	}
-	while (j >= 0)
-	{
-		sum2 += a[j][j];
-		j--;
-	}
-	printf("%d, %d\n", sum, sum2);
+	printf("%d, ", sum1);
+	print("%d\n", sum2);
 }
