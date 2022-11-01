@@ -17,13 +17,13 @@ unsigned int _strspn(char *s, char *accept)
 	int k = 0;
 	int pc;
 
-	for (i = 0; i < m; i++)
+	for (i = 0; i < n; i++)
 	{
 		pc = k;
 
-		for (j = 0; j < n; j++)
+		for (j = 0; j < m; j++)
 		{
-			if (accept[i] == s[j])
+			if (accept[j] == s[i])
 			{
 				k++;
 			}
