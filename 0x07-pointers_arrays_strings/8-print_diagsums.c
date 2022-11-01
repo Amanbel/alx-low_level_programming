@@ -2,27 +2,28 @@
 #include "main.h"
 
 /**
- * print_diagsums - print diagonal sum
- * @a: array
- * @size: size of array
+ * print_diagsums - prints the sum of diagonals in a square array
+ * @a: the array
+ * @size: dimension of array
  * Return: Nothing
  */
 
 void print_diagsums(int *a, int size)
 {
-	int i = 0;
-	int j = (size - 1);
-	int sum1, sum2 = 0;
+	int prc, sum1, sum2, diagc, diagc2, row;
 
-	while (i < size)
+	prc = 0, sum1 = 0, sum2 = 0, diagc = 0, diagc2 = 0, row = 0;
+
+	while (prc < size * size)
 	{
-		sum1 += a[i][i];
-		i++;
+		if (prc == diagc + (row * size))
+			sum1 += a[prc];
+		if (prc == (size - diagc2 - 1) + (row * size))
+			sum2 += a[prc];
+		if (((prc + 1) % size) == 0)
+			row++, diag++, diagc2++;
+		prc++;
 	}
-	while (j >= 0)
-	{
-		sum2 += a[j][j];
-		j++;
-	}
-	printf("%d, %d", sum1, sum2);
+	printf("%d, ", sum1);
+	printf("%d\n", sum2);
 }
