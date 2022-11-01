@@ -11,11 +11,11 @@
 void print_diagsums(int *a, int size)
 {
 	int i = 0;
-	int j = (size - 1);
+	int j = ((size * size) - 1);
 	int sum = 0;
 	int sum2 = 0;
 
-	while (i < size)
+	while (i < (size * size))
 	{
 		sum += a[i][i];
 		i++;
