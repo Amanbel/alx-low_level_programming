@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * _strchr - returns a pointer to the first occurence of the character c in the string s
+ * _strchr - returns a pointer to the first occurence
  * @s: the string
  * @c: the character that is supposed to be returned
  * Return: a pointer
@@ -16,7 +16,7 @@ char *_strchr(char *s, char c)
 
 	for (i = 0; i < n; i++)
 	{
-		if (s[i] == c)
+		if (*(s + i) == c)
 		{
 			return (s + i);
 		}
