@@ -23,7 +23,7 @@ char *_strstr(char *haystack, char *needle)
 			temp = needle;
 			while (*temp)
 			{
-				if (*haystack++ ! *temp++)
+				if (*haystack++ != *temp++)
 				{
 					haystack = occ;
 					break;
