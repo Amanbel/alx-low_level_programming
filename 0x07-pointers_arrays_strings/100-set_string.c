@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * set-string - aet a pointer to a string
+ * set_string - sets a pointer to a string
  * @s: pointer
  * @to: string
  * Return: Nothing
