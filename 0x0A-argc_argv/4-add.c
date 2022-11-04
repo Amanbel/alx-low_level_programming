@@ -20,6 +20,11 @@ int main(int argc, char *argv[])
 	}
 		for (i = 1; i < argc; i++)
 		{
+			if (!atoi(argv[i]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 			if (argv[i][0] > 'a' && argv[i][0] < 'z')
 			{
 				printf("Error\n");
@@ -30,7 +35,7 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
-			if (atoi(argv[i]) >= 0)
+			if (atoi(argv[i]) > 0)
 			{
 				sum += atoi(argv[i]);
 			}
