@@ -19,10 +19,10 @@ int main(int argc, char *argv[])
 	{
 		if (*(n + i) != '\0')
 		{
-			putchar(*(n + i));
+			_putchar(*(n + i));
 		}
 	}
-	putchar('\n');
+	_putchar('\n');
 
 	return (0);
 }
