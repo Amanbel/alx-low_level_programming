@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -10,7 +11,18 @@
 
 int main(int argc, char *argv[])
 {
-	_putchar(argv[0] + '0');
+	int i;
+	char *n = argv[0];
+	int j = strlen(n);
+
+	for (i = 0; i < j; i++)
+	{
+		if (*(n + i) != '\0')
+		{
+			putchar(*(n + i));
+		}
+	}
+	putchar('\n');
 
 	return (0);
 }
