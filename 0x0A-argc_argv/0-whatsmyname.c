@@ -11,18 +11,9 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
-	char *n = argv[0];
-	int j = strlen(n);
+	(void)argc;
 
-	for (i = 0; i < j; i++)
-	{
-		if (*(n + i) != '\0')
-		{
-			_putchar(*(n + i));
-		}
-	}
-	_putchar('\n');
+	printf("%s\n", argv[0]);
 
 	return (0);
 }
