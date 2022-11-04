@@ -10,7 +10,7 @@ int change(int cents);
  * @argv: array pointing to arguments
  * Return: 0
  */
- 
+
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
  * @cents: amount of coins from main function
  * Return: change
  */
- 
+
 int change(int cents)
 {
 	int q = 25, d = 10, n = 5, t = 2, p = 1;
