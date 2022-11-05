@@ -1,1 +1,1 @@
-read me for static libraries
+read me for static libs
