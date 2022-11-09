@@ -15,8 +15,14 @@ char *_strdup(char *str)
 	unsigned int n = strlen(str) + 1;
 	char *p = malloc(n * sizeof(char));
 
-	if (!p || str == "NULL")
+	if (!p)
 		return (NULL);
+
+	if (str == NULL)
+	{
+		free(p);
+		return (NULL);
+	}
 
 	for (i = 0; i <= n; i++)
 	{
