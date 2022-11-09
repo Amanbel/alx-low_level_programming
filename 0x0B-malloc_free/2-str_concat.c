@@ -15,12 +15,21 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 
 	if (!s1 && !s2)
-		return (NULL);
+		return ("");
+
+	if (!s1)
+		s1 = "";
+
+	if (!s2)
+		s2 = "";
 
 	n = strlen(s1);
 	m = strlen(s2);
 	sum = n + m + 1;
 	p = malloc(sum * sizeof(char));
+
+	if (!p)
+		return (NULL);
 
 	for (i = 0; i <= n; i++)
 	{
