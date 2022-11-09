@@ -7,7 +7,7 @@
  * @av: array of strings
  * Return: char * to concatenated string
  */
- 
+
 char *argstostr(int ac, char **av)
 {
 	int size = 0, i;
