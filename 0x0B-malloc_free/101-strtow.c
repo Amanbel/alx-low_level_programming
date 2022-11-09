@@ -1,14 +1,12 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
  * number - function to calculate number of words
  * @str: string being passed to check for words
- *
  * Return: number of words
  */
- 
+
 int number(char *str)
 {
 	int a, num = 0;
@@ -32,7 +30,7 @@ int number(char *str)
  * @string: pointer values being passed for freeing
  * @i: counter
  */
- 
+
 void free_everything(char **string, int i)
 {
 	for (; i > 0;)
@@ -45,7 +43,7 @@ void free_everything(char **string, int i)
  * @str: string being passed
  * Return: null if string is empty or null or function fails
  */
- 
+
 char **strtow(char *str)
 {
 	int total_words = 0, b = 0, c = 0, length = 0;
@@ -84,7 +82,8 @@ char **strtow(char *str)
 				c++;
 			}
 			words[b][c] = '\0';
-			b++; c = 0; length = 0; str++;
+			b++, c = 0, length = 0;
+			str++;
 		}
 	}
 	return (words);
