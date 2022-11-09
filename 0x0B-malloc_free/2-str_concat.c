@@ -14,9 +14,6 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, j, n, m, sum;
 	char *p;
 
-	if (!s1 && !s2)
-		return (NULL);
-
 	if (!s1)
 		s1 = "";
 
