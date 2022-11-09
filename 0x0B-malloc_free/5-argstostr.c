@@ -3,10 +3,8 @@
 
 /**
  * argstostr - converts array of strings to one string with newline separators
- *
  * @ac: number of strings
  * @av: array of strings
- *
  * Return: char * to concatenated string
  */
  
