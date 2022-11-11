@@ -13,10 +13,8 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
-	unsigned int j;
 	char *p;
-	unsigned int m, o, sum;
+	unsigned int m, o, sum, i, j;
 
 	if (!s1)
 		s1 = "";
@@ -36,27 +34,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if(!p)
 		return (NULL);
 
-	for (i = 0; i <= m; i++)
+	for (i = 0; i < m; i++)
+		p[i] = s1[i];
+	for (j = 0; i < sum; j++)
 	{
-		*(p + i) = *(s1 + i);
-
-		if (*(s1 + i) == '\0')
-		{
-			if (*(s2 + j) != '\0')
-			{
-				while (j < n)
-				{
-					*(p + i) = *(s2 + j);
-					j++;
-					if (*(s2 + j) == '\0')
-						return (p);
-					i++;
-				}
-				*(p + (j + 1)) = '\0';
-				return (p);
-			}
-		}
+		p[i] = s2[j];
+		i++;
 	}
-
+	i++;
+	p[i] = '\0';
 	return (p);
 }
