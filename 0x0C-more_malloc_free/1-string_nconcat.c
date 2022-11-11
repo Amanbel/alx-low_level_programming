@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			if (*(s2 + j))
 			{
-				while (j <= n)
+				while (j < n)
 				{
 					*(p + i) = *(s2 + j);
 					j++;
@@ -48,6 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 						return (p);
 					i++;
 				}
+				*(p + (j + 1)) = '\0';
 				return (p);
 			}
 			return (p);
