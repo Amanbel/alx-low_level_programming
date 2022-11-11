@@ -13,35 +13,38 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	unsigned int m, o, sum, i, j;
+	char *arr;
+	unsigned int co, co_2, i, j;
 
 	if (!s1)
 		s1 = "";
 	if (!s2)
 		s2 = "";
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+	}
 
-	m = strlen(s1);
-	o = strlen(s2);
+	for (j = 0; s2[j] != '\0'; j++)
+	{
+	}
 
-	if (n < o)
-		o = n;
+	if (n < j)
+		j = n;
 
-	sum = m + o;
+	j += i;
+	arr = malloc(sizeof(char *) * (j + 1));
 
-	p = malloc((sum + 1) * sizeof(char *));
-
-	if(!p)
+	if (arr == NULL)
 		return (NULL);
 
-	for (i = 0; i < m; i++)
-		p[i] = s1[i];
-	for (j = 0; i < sum; j++)
+	for (co = 0; co < i; co++)
+		arr[co] = s1[co];
+	for (co_2 = 0; co < j; co_2++)
 	{
-		p[i] = s2[j];
-		i++;
+		arr[co] = s2[co_2];
+		co++;
 	}
-	i++;
-	p[i] = '\0';
-	return (p);
+	co++;
+	arr[co] = '\0';
+	return (arr);
 }
