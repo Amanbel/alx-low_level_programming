@@ -14,7 +14,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
-	unsigned int j = 0;
+	unsigned int j;
 	char *p;
 	unsigned int m, o, sum;
 
@@ -22,7 +22,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (!s2)
 		s2 = "";
-
+	j = 0;
 	m = strlen(s1);
 	o = strlen(s2);
 	sum = m + o;
@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			if (*(s2 + j))
 			{
-				while (j < n)
+				while (j <= n)
 				{
 					*(p + i) = *(s2 + j);
 					j++;
