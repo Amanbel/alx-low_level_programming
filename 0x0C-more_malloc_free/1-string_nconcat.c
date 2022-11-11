@@ -13,7 +13,8 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j = 0;
+	unsigned int i;
+	unsigned int j = 0;
 	char *p;
 	unsigned int m, o, sum;
 
@@ -31,7 +32,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if(!p)
 		return (NULL);
 
-	for (i ; i <= m; i++)
+	for (i = 0; i <= m; i++)
 	{
 		*(p + i) = *(s1 + i);
 
