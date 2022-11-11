@@ -15,16 +15,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i, j = 0;
 	char *p;
-	unsigned int m, o;
-
-	m = strlen(s1);
-	o = strlen(s2);
-	sum = m + o;
+	unsigned int m, o, sum;
 
 	if (!s1)
 		s1 = "";
 	if (!s2)
 		s2 = "";
+
+	m = strlen(s1);
+	o = strlen(s2);
+	sum = m + o;
 
 	p = malloc(sum * sizeof(char) + 1);
 
