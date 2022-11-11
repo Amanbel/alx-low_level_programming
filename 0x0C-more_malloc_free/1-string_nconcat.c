@@ -25,9 +25,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = 0;
 	m = strlen(s1);
 	o = strlen(s2);
+
+	if (n < o)
+		o = n;
+
 	sum = m + o;
 
-	p = malloc(sum * sizeof(char) + 1);
+	p = malloc((sum + 1) * sizeof(char));
 
 	if(!p)
 		return (NULL);
