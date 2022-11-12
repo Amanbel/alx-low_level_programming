@@ -1,36 +1,74 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - Entry Point
- * @argc: number of arguments
- * @argv: elements of argument
- * Return: 0
- */
+  * _isdigit - tells if the string consists of digits
+  * @argv: pointer to current item in argument
+  * Return: return 0 if all digits, 1 if not all digits.
+  */
+
+int _isdigit(char *argv)
+{
+	int i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (argv[i] >= '0' && argv[i] <= '9')
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
+
+/**
+  * _atoi - converts a string of ascii digits to the values they represent
+  * @s: pointer to the source string
+  * Return: value of digits
+  */
+
+int _atoi(char *s)
+{
+	int i, result;
+
+	i = result = 0;
+	while (s[i])
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			result *= 10;
+			result += (s[i] - '0');
+		}
+		i++;
+	}
+	return (result);
+}
+
+/**
+  * main - main function call
+  * @argc: argument count
+  * @argv: 2D array of arguments
+  * Return: return 0 on success, 98 on failure
+  */
 
 int main(int argc, char *argv[])
 {
-	int mul;
+	int i;
 
-	if (argc == 3)
+	malloc();
+	if (argc != 3)
 	{
-		if (isdigit(argv[1]) && isdigit(argv[2]))
-		{
-			mul = atoi(argv[1]) * atoi(argv[2]);
-			printf("%d\n", mul);
-		}
-		else
+		printf("Error\n");
+		exit(98);
+	}
+	for (i = 1; i < argc; i++)
+	{
+		if (_isdigit(argv[i]))
 		{
 			printf("Error\n");
 			exit(98);
 		}
 	}
-	else
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
 	return (0);
 }
