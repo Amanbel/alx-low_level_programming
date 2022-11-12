@@ -12,19 +12,16 @@ int main(int argc, char *argv[])
 {
 	int mul;
 
-	if (argc > 3 || argc < 3)
+	if (argc == 3)
+	{
+		mul = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", mul);
+	}
+	else
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	mul = atoi(argv[1]) * atoi(argv[2]);
-	if (!mul)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	print("%d\n", mul);
 
 	return (0);
 }
