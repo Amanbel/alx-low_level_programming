@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 /**
  * main - Entry Point
@@ -14,8 +15,16 @@ int main(int argc, char *argv[])
 
 	if (argc == 3)
 	{
-		mul = atoi(argv[1]) * atoi(argv[2]);
-		printf("%d\n", mul);
+		if (isdigit(argv[1]) && isdigit(argv[2]))
+		{
+			mul = atoi(argv[1]) * atoi(argv[2]);
+			printf("%d\n", mul);
+		}
+		else
+		{
+			printf("Error\n");
+			exit(98);
+		}
 	}
 	else
 	{
