@@ -32,6 +32,7 @@ char *dup_str(char *s)
  * @name: name of pet
  * @age: age of pet
  * @owner: owner of pet
+ * Return: pointer to the struct
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -68,6 +69,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 /**
  * free_dog - frees allocated mem
  * @d: pointer to struct
+ * Return: Nothing
  */
 
 void free_dog(dog_t *d)
