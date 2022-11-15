@@ -18,23 +18,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (adog == NULL)
 		return (NULL);
-	strcpy(dest, name);
-	
-	if (dest == NULL)
-	{
-		free(adog);
-		return(NULL);
-	}
-	adog->name = dest;
-
-	strcpy(dest2, owner);
-	if (dest2 == NULL)
-	{
-		free(adog);
-		return(NULL);
-	}
-	adog->owner = dest2;
+	adog->name = name;
 	adog->age = age;
+	adog->owner = owner;
 
 	return (adog);
 }
