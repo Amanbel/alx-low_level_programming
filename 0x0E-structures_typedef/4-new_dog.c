@@ -4,6 +4,30 @@
 #include "dog.h"
 
 /**
+ * dup_str - copy string
+ * @s: string
+ * Return: pointer to string
+ */
+
+char *dup_str(char *s)
+{
+	int len, i;
+	char *cpy;
+
+	len = strlen(s);
+
+	cpy = malloc(sizeof(char) * len);
+
+	if (!cpy)
+		return (NULL);
+	for (i = 0; i < len; i++)
+	{
+		*(cpy + i) = *(s + i);
+	}
+	return (cpy);
+}
+
+/**
  * new_dog - Entry Point
  * @name: name of pet
  * @age: age of pet
@@ -13,14 +37,30 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *adog;
+	char *cstr1, *cstr2;
 
 	adog = malloc(sizeof(dog_t));
 
 	if (adog == NULL)
 		return (NULL);
-	adog->name = name;
 	adog->age = age;
-	adog->owner = owner;
+
+	cstr1 = dup_str(name);
+	if (cstr1 == NULL)
+	{
+		free_dog(adog);
+		return (NULL);
+	}
+	adog->name = cstr1;
+
+	cstr2 = dup_str(owner);
+	if (cstr2 == NULL)
+	{
+		free_dog(adog);
+		return (NULL);
+	}
+
+	adog->owner = cstr2;
 
 	return (adog);
 }
