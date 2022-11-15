@@ -16,11 +16,11 @@ char *dup_str(char *s)
 
 	len = strlen(s);
 
-	cpy = malloc(sizeof(char) * len);
+	cpy = malloc(sizeof(char) * (len + 1));
 
 	if (!cpy)
 		return (NULL);
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 	{
 		*(cpy + i) = *(s + i);
 	}
