@@ -13,30 +13,28 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *adog;
-	char *dest;
-	char *dest2;
 
 	adog = malloc(sizeof(dog_t));
 
 	if (adog == NULL)
 		return (NULL);
-	adog->age = age;
-
 	strcpy(dest, name);
+	
 	if (dest == NULL)
 	{
-		free_dog(adog);
-		return (NULL);
+		free(adog);
+		return(NULL);
 	}
 	adog->name = dest;
 
 	strcpy(dest2, owner);
 	if (dest2 == NULL)
 	{
-		free_dog(adog);
-		return (NULL);
+		free(adog);
+		return(NULL);
 	}
 	adog->owner = dest2;
+	adog->age = age;
 
 	return (adog);
 }
@@ -50,7 +48,7 @@ void free_dog(dog_t *d)
 {
 	if (d == NULL)
 		return;
-	if (d->name !=NULL)
+	if (d->name != NULL)
 		free(d->name);
 	if (d->owner != NULL)
 		free(d->owner);
