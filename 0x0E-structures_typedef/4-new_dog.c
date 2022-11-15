@@ -20,23 +20,39 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (adog == NULL)
 		return (NULL);
-	strcpy(dest, adog->name);
+	adog->age = age;
 
-	if (name == NULL)
+	strcpy(dest, adog->name);
+	if (dest == NULL)
 	{
-		free(adog);
+		free_dog(adog);
 		return (NULL);
 	}
 	adog->name = dest;
-	strcpy(dest2, adog->owner);
 
-	if (owner == NULL)
+	strcpy(dest2, adog->owner);
+	if (dest2 == NULL)
 	{
-		free(adog);
+		free_dog(adog);
 		return (NULL);
 	}
-	adog->age = age;
 	adog->owner = dest2;
 
 	return (adog);
+}
+
+/**
+ * free_dog - frees allocated mem
+ * @d: pointer to struct
+ */
+
+void free_dog(dog_t *d)
+{
+	if (d == NULL)
+		return;
+	if (d->name !=NULL)
+		free(d->name);
+	if (d->owner != NULL)
+		free(d->owner);
+	free(d);
 }
