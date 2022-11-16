@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <stdio.h>
 
 /**
  * main - a basic calculator
@@ -8,6 +9,7 @@
  *
  * Return: 0
  */
+
 int main(int argc, char *argv[])
 {
 	int (*f)(int, int);
