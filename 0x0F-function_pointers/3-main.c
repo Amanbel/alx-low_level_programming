@@ -7,7 +7,6 @@
  * @argc: the size of the argument vector
  * @argv: the argument vector
  * Description: calculates two numbers
- *
  * Return: 0
  */
 
