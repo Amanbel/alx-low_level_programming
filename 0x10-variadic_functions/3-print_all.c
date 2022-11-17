@@ -40,13 +40,22 @@ void print_all(const char * const format, ...)
 		{
 			char *x = va_arg(args, char *);
 
-			(x == NULL) ? printf("%p", (void *) x)
-				: printf("%s", x);
+			if (x == NULL)
+			{
+				printf("%p", (void *) x);
+				str++;
+				i++;
+				continue;
+			}
+			printf("%s", x);
 		}
-		if (i != (len - 1))
+		while (i != (len - 1))
+		{
 			printf(", ");
+			break;
+		}
 		str++;
 		i++;
 	}
-	printf("\n"));
+	printf("\n");
 }
