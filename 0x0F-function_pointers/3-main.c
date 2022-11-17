@@ -20,11 +20,6 @@ int main(int argc, char *argv[])
 		puts("Error");
 		exit(98);
 	}
-	if (argv[2][1] !- '\0')
-	{
-		puts("Error");
-		exit(99);
-	}
 
 	f = get_op_func(argv[2]);
 
