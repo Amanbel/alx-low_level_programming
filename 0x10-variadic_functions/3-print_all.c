@@ -1,85 +1,98 @@
-#include "variadic_functions.h"
-#include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * _printchar - print char type element from va_list
- * @list: va_list passed to function
+ * printf_char - printfs a char from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-
-void _printchar(va_list list)
+void printf_char(va_list list)
 {
-	printf("%c", va_arg(list, int));
+	printf("%c", (char) va_arg(list, int));
 }
 
 /**
- * _printstr - print string element from va_list
- * @list: va_list passed to function
+ * printf_int - printfs an int from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-
-void _printstr(va_list list)
-{
-	char *s;
-
-	s = va_arg(list, char *);
-	if (s == NULL)
-		s = "(nil)";
-	printf("%s", s);
-}
-
-/**
- * _printfloat - print float type element from va_list
- * @list: va_list passed to function
- */
-
-void _printfloat(va_list list)
-{
-	printf("%f", va_arg(list, double));
-}
-
-/**
- * _printint - print int type element from va_list
- * @list: va_list passed to function
- */
-
-void _printint(va_list list)
+void printf_int(va_list list)
 {
 	printf("%d", va_arg(list, int));
 }
 
 /**
- * print_all - print anything passed if char, int, float, or string.
- * @format: string of formats to use and print
+ * printf_float - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_float(va_list list)
+{
+	printf("%f", (float) va_arg(list, double));
+}
+
+/**
+ * printf_string - printfs a string from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+
+void printf_string(va_list list)
+{
+	char *str = va_arg(list, char*);
+
+	while (str != NULL)
+	{
+		printf("%s", str);
+		return;
+	}
+	printf("(nil)");
+}
+
+
+/**
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
  */
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i, j;
-	va_list args;
-	char *sep;
+	const char *ptr;
+	va_list list;
+	funckey key[4] = { {printf_char, 'c'}, {printf_int, 'i'},
+			   {printf_float, 'f'}, {printf_string, 's'} };
+	int keyind = 0, notfirst = 0;
 
-	checker storage[] = {
-		{ "c", _printchar },
-		{ "f", _printfloat },
-		{ "s", _printstr },
-		{ "i", _printint }
-	};
-
-	i = 0;
-	sep = "";
-	va_start(args, format);
-	while (format != NULL && format[i / 4] != '\0')
+	ptr = format;
+	va_start(list, format);
+	while (format != NULL && *ptr)
 	{
-		j = i % 4;
-		if (storage[j].type[0] == format[i / 4])
+		if (key[keyind].spec == *ptr)
 		{
-			printf("%s", sep);
-			storage[j].f(args);
-			sep = ", ";
+			if (notfirst)
+				printf(", ");
+			notfirst = 1;
+			key[keyind].f(list);
+			ptr++;
+			keyind = -1;
 		}
-		i++;
+		keyind++;
+		ptr += keyind / 4;
+		keyind %= 4;
 	}
 	printf("\n");
-	va_end(args);
+
+	va_end(list);
 }
