@@ -12,7 +12,6 @@
 void print_all(const char * const format, ...)
 {
 	int i;
-	char *str = format;
 	int len = strlen(format);
 
 	va_list args;
@@ -21,7 +20,7 @@ void print_all(const char * const format, ...)
 
 	i = 0;
 
-	while (*str)
+	while (i < len)
 	{
 		if (format[i] == 'c')
 		{
@@ -56,7 +55,6 @@ void print_all(const char * const format, ...)
 			printf(", ");
 			break;
 		}
-		str++;
 		i++;
 	}
 	printf("\n");
