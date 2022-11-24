@@ -1,13 +1,13 @@
 #ifndef LISTS_H
 #define LISTS_H
 /**
- * struct list_func - singly linked list
+ * struct list_i - singly linked list
  * @str: string data
  * @len: integer data
  * @next: pointer to next link
  */
 
-struct link_func
+typedef struct link_s
 {
 	char *str;
 	unsigned int len;
