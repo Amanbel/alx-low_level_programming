@@ -1,16 +1,19 @@
-section .text
+section .data
+	hello:	db "Hello, Holberton", 10, 0
+	format:	db "%s", 0
+
+	section .text
 	global main
+	extern printf
 
 main:
-	mov edx, len	;length of mess
-	mov ecx, msg	;message
-	mov ebx, 1	;standard output
-	mov eax, 4	;sys_write call
-	int 0x80	;call karnel
+    push rbp
+    mov  rbp, rsp
 
-	mov eax, 1
-	int 0x80	;call karnel
+    mov  rsi, hello
+    mov  rdi, format
+    call printf
 
-section .data
-	msg db "Hello, Holberton", 0xa	;assigning bytes to mess
-	len equ $-msg	;length equal to mess
+    pop rbp
+    mov rax, 0
+    ret
