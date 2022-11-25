@@ -1,11 +1,11 @@
 #include <stdio.h>
 
+void before(void) __attribute__((constructor));
+
 /**
  * before - Entry Point
  * Description: print before main
  */
-
-void before(void) __attribute__((constructor));
 
 void before(void)
 {
