@@ -22,7 +22,7 @@ void print_diagsums(int *a, int size)
 	while (j >= 0)
 	{
 		sum2 += a[j][j];
-		j++;
+		j--;
 	}
 	printf("%d, %d", sum1, sum2);
 }
