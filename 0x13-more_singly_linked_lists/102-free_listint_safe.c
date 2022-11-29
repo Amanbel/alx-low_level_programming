@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "lists.h"
+
 /**
  * free_listint_safe - free linked list
  * @h: pointer to function
@@ -21,7 +22,7 @@ size_t free_listint_safe(listint_t **h)
 	while (head != NULL)
 	{
 		runner = *h;
-		for (r_i = 0; r_i < h_i; r_i++)
+		for (r_i = 0; r_i <= h_i; r_i++)
 		{
 			if (runner == current)
 			{
