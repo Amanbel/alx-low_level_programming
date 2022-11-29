@@ -15,32 +15,6 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-/**
- * find_listint - finds loop
- * @head: pointer to linked list
- * Return: address of node
- */
-
-listint_t *find_listint(listint_t *head)
-{
-	listint_t *ptr, *end;
-
-	if (head == NULL)
-		return (NULL);
-
-	for (end = head->next; end != NULL; end = end->next)
-	{
-		if (end == end->next)
-			return (end);
-
-		for (ptr = head; ptr != end; ptr = ptr->next)
-			if (ptr == end->next)
-				return (end->next);
-	}
-	return (NULL);
-}
-
-
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
