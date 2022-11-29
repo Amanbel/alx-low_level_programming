@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "lists.h"
-
 /**
  * free_listint_safe - free linked list
  * @h: pointer to function
