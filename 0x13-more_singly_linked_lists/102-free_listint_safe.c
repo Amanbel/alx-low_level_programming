@@ -8,7 +8,7 @@
  * Return: address of node
  */
 
-listint_t *find_listint(listint_t *head)
+listint_t *find_listint_f(listint_t *head)
 {
 	listint_t *ptr, *end;
 
@@ -43,7 +43,7 @@ size_t free_listint_safe(listint_t **h)
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	loopnode = find_listint(*h);
+	loopnode = find_listint_f(*h);
 	for (len = 0; (*h != loopnode || loop) && *h != NULL; *h = next)
 	{
 		len++;
