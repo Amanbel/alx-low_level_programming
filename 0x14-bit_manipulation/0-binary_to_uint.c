@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "main.h"
 
 /**
@@ -13,11 +14,12 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int sum = 0;
 	unsigned int i;
+	unsigned int len;
 
 	if (b == NULL)
 		return (0);
 
-	unsigned int len = strlen(b);
+	len = strlen(b);
 
 	for (i = 0; i < len; i++)
 	{
@@ -31,7 +33,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			sum += (pow(2,i) * atoi(b[i]));
+			sum += (pow(2, i) * atoi(b[i]));
 		}
 	}
 	return (sum);
