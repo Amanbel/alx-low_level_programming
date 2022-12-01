@@ -12,13 +12,14 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sum = 0;
+	unsigned int sum;
 	unsigned int i;
 	unsigned int len;
 
 	if (b == NULL)
 		return (0);
 
+	sum = 0;
 	len = strlen(b);
 
 	for (i = 0; i < len; i++)
@@ -27,7 +28,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		else if (b[i] > 'a' && b[i] < 'z')
+		if (b[i] > 'a' && b[i] < 'z')
 		{
 			return (0);
 		}
