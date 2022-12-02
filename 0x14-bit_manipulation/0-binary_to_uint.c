@@ -4,6 +4,8 @@
 #include <math.h>
 #include "main.h"
 
+int _pow(int t);
+
 /**
  * binary_to_uint - converts binary to integer
  * @b: binary number input
@@ -15,10 +17,10 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int sum;
 	unsigned int i;
 	unsigned int len;
-	unsigned int base;
 	int j;
 	if (b == NULL)
 		return (0);
+
 	j = 7;
 	sum = 0;
 	len = strlen(b);
@@ -37,11 +39,31 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			base = pow(2, j);
-			sum += (base * (b[i] - '0'));
+			sum += (_pow(j) * (b[i] - '0'));
 		}
 		j--;
 	}
 	return (sum);
 }
 
+/**
+ * _pow - gives the power of two
+ * @t: exponent
+ * Return: result
+ */
+
+int _pow(int t)
+{
+	int mul;
+	int i;
+
+	if (t == 0)
+		return (1);
+	mul = 1;
+
+	for (i = 0; i < t; i++)
+	{
+		mul *= 2;
+	}
+	return (mul);
+}
