@@ -21,14 +21,11 @@ unsigned int binary_to_uint(const char *b)
 	if (b == NULL)
 		return (0);
 
-	j = 7;
 	sum = 0;
 	len = strlen(b);
-
+	j = strlen(b) - 1;
 	for (i = 0; i < len; i++)
 	{
-		if (j < 0)
-			j = 7;
 		if (b[i] > 'A' && b[i] < 'Z')
 		{
 			return (0);
@@ -39,7 +36,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			sum += (_pow(j) * (b[i] - '0'));
+			sum += (_pow(i) * (b[j] - '0'));
 		}
 		j--;
 	}
