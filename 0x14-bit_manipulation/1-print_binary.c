@@ -37,12 +37,12 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		printf("0\n");
+		printf("0");
 		return;
 	}
 	if (n == 1)
 	{
-		printf("1\n");
+		printf("1");
 		return;
 	}
 
@@ -66,14 +66,13 @@ void print_binary(unsigned long int n)
 
 		if (n >= j)
 		{
-			_putchar('1');
+			printf("1");;
 			n -= _pow(k);
 		}
 		else
 		{
-			_putchar('0');
+			printf("0");
 		}
 		k--;
 	}
-	printf("\n");
 }
