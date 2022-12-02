@@ -32,54 +32,40 @@ int _pow(int t)
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int i;
-	unsigned long int j[32];
-	unsigned long int b;
-	unsigned long int f;
-	unsigned long int k;
-	unsigned long int bin[32];
+	unsigned long int i = 0;
+	int k;
 
 	if (n == 0)
 		printf("0\n");
 	if (n == 1)
 		printf("1\n");
 
-	for (i = 0; i <= n; i++)
+	while (i <= n)
 	{
 		unsigned long int l = _pow(i);
 		if (l <= n)
 		{
-			j[i] = _pow(i);
+			i++;
 		}
 		else
 		{
-			j[i] = '\0';
 			break;
 		}
 	}
-	k = 0;
-
-	while (j[k])
-		k++;
-	b = 0;
-	f = k - 1;
-
-	while (j[f])
+	k = i - 1;
+	while (k >= 0)
 	{
-		if (n >= j[f])
+		unsigned long int j = _pow(k);
+		if (n >= j)
 		{
-			bin[b] = 1;
-			n -= j[f];
+			printf("%d", 1);
+			n -= _pow(k);
 		}
 		else
 		{
-			bin[b] = 0;
+			printf("%d", 0);
 		}
-		f--;
-		b++;
+		k--;
 	}
-	bin[b] = '\0';
-	for (i = 0; i < k; i++)
-		printf("%ld", bin[i]);
 	printf("\n");
 }
