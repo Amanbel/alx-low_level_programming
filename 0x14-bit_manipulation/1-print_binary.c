@@ -43,6 +43,7 @@ void print_binary(unsigned long int n)
 	while (i <= n)
 	{
 		unsigned long int l = _pow(i);
+
 		if (l <= n)
 		{
 			i++;
@@ -56,6 +57,7 @@ void print_binary(unsigned long int n)
 	while (k >= 0)
 	{
 		unsigned long int j = _pow(k);
+
 		if (n >= j)
 		{
 			printf("%d", 1);
