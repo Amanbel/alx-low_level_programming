@@ -36,9 +36,15 @@ void print_binary(unsigned long int n)
 	int k;
 
 	if (n == 0)
+	{
 		printf("0\n");
+		return;
+	}
 	if (n == 1)
+	{
 		printf("1\n");
+		return;
+	}
 
 	while (i <= n)
 	{
