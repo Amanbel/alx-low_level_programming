@@ -2,75 +2,47 @@
 #include "main.h"
 
 /**
- * _pow - gives the power of two
- * @t: exponent
- * Return: result
- */
-
-int _pow(int t)
-{
-	int mul;
-	int i;
-
-	if (t == 0)
-		return (1);
-	mul = 1;
-
-	for (i = 0; i < t; i++)
-	{
-		mul *= 2;
-	}
-	return (mul);
-}
-
-
-/**
- * print_binary - prints binary form of integer
- * @n: input integer
- * Return: Nothing
+ * print_binary - prints decimal as binary
+ * @n: long integer
  */
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = 0;
-	int k;
+	signed long int size;
+	char c;
+	int flag;
+
+	size = sizeof(n) * 8 - 1;
 
 	if (n == 0)
 	{
 		printf("0");
 		return;
 	}
+
 	if (n == 1)
 	{
 		printf("1");
 		return;
 	}
 
-	while (i <= n)
-	{
-		unsigned long int l = _pow(i);
+	flag = 0;
 
-		if (l <= n)
-		{
-			i++;
-		}
+	while (size >= 0)
+	{
+		c = (n >> size) & 1;
+
+		if (flag == 1)
+			putchar(c + '0');
 		else
 		{
-			break;
+			if (c == 1)
+			{
+				putchar(c + '0');
+				flag = 1;
+			}
 		}
-	}
-	k = i - 1;
-	while (k >= 0)
-	{
-		unsigned long int j = _pow(k);
 
-		if (n >= j)
-		{
-			printf("1");
-			n -= _pow(k);
-		}
-		else
-			printf("0");
-		k--;
+		size -= 1;
 	}
 }
