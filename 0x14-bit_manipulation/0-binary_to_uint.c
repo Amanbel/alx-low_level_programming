@@ -18,6 +18,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i;
 	unsigned int len;
 	int j;
+
 	if (b == NULL)
 		return (0);
 
