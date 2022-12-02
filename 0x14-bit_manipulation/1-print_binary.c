@@ -66,13 +66,11 @@ void print_binary(unsigned long int n)
 
 		if (n >= j)
 		{
-			printf("1");;
+			printf("1");
 			n -= _pow(k);
 		}
 		else
-		{
 			printf("0");
-		}
 		k--;
 	}
 }
