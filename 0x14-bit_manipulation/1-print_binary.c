@@ -60,12 +60,12 @@ void print_binary(unsigned long int n)
 
 		if (n >= j)
 		{
-			printf("1");
+			_putchar('1');
 			n -= _pow(k);
 		}
 		else
 		{
-			printf("0");
+			_putchar('0');
 		}
 		k--;
 	}
