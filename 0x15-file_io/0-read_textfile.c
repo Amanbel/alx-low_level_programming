@@ -1,4 +1,5 @@
 #include"main.h"
+#include<string.h>
 
 /**
  * read_textfile - outputs text to stdout
@@ -31,8 +32,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buff[letters] = '\0';
 
-	if (buff[letters - 1] != '\n')
-		buff[letters - 1] = '\n';
+	if (strlen(buff) == letters)
+	{
+		if (buff[letters - 1] != '\n')
+			buff[letters - 1] = '\n';
+	}
 
 	wr = write(1, buff, rd);
 
