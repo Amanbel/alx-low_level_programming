@@ -31,7 +31,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buff[letters] = '\0';
 
+	if (buff[letters - 1] != '\n')
+		buff[letters - 1] = '\n';
+
 	wr = write(1, buff, rd);
+
 	if (wr == -1)
 		return (0);
 
