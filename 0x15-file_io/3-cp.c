@@ -27,14 +27,9 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fd2 = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0644);
-	/**
-	 * if (fd2 == -1)
-	 * 	fd2 = open(av[2], O_WRONLY | O_CREAT, 0644);
-	 */
 	if (fd2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		close_it(fd1);
 		exit(99);
 	}
 	while ((wr_chk = read(fd1, buff, sizeof(buff))) > 0)
