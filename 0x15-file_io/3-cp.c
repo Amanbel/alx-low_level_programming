@@ -34,21 +34,35 @@ int main(int ac, char **av)
 	}
 	while ((wr_chk = read(fd1, buff, sizeof(buff))) > 0)
 	{
+		if (wr_chk == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			close_it(fd1);
+			close_it(fd2);
+			exit(98);
+		}
 		if (write(fd2, buff, wr_chk) != wr_chk)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			exit(99);
 		}
 	}
-	if (close(fd1) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
-		exit(100);
-	}
-	if (close(fd2) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
-		exit(100);
-	}
+	close_it(fd1);
+	close_it(fd2);
 	return (0);
+}
+
+/**
+ * close_it - deallocates file discriptor
+ * @arg: pointer to fd
+ * Return: nothing
+ */
+
+void close_it(int arg)
+{
+	if (close(arg) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", arg);
+		exit(100);
+	}
 }
