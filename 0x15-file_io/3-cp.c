@@ -1,5 +1,7 @@
 #include "main.h"
 
+void close_it(int arg);
+
 /**
  * main - Entry Point
  * Description: copies text from one file to another
