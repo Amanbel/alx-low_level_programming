@@ -10,7 +10,7 @@
 
 size_t print_dlistint(const dlistint_t *h)
 {
-	dlistint *ptr = malloc(sizeof(dlistint_t));
+	dlistint_t *ptr = malloc(sizeof(dlistint_t));
 	unsigned int i = 0;
 
 	if (ptr == NULL)
