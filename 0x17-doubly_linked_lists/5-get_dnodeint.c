@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.h"
+#include "lists.h"
 
 /**
  * get_dnodeint_at_index - gets node at nth index
@@ -10,15 +10,19 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	dlistint_t *ptr;
-	unsigned int i = 1;
+	unsigned int i;
 
 	if (head == NULL)
 		return (NULL);
 
 	ptr = head;
-	while (i <= index)
+
+	if (index == 0)
+		return (ptr);
+	i = 0;
+	while (i < index)
 	{
-		ptr = head->next;
+		ptr = ptr->next;
 		i++;
 	}
 	return (ptr);
