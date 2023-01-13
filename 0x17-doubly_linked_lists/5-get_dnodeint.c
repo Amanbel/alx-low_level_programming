@@ -4,6 +4,7 @@
 /**
  * get_dnodeint_at_index - gets node at nth index
  * @head: first node of the dlist
+ * @index: index of the node to be extracted
  * Return: nth node if success, NULL if fail
  */
 
