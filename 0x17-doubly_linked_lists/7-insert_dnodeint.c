@@ -38,6 +38,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		i++;
 	}
 
+	if (idx == 0)
+		return (add_nodeint(h, n));
+
+	if (ptr->next == NULL)
+		return (add_dnodeint_end(h, n));
+
 	ptr_p = ptr->prev;
 	ptr->prev = new;
 	if (ptr_p != NULL)
