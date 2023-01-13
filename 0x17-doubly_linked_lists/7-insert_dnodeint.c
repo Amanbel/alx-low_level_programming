@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -9,7 +10,7 @@
  * Return: address of new node if success, NULL if fail
  */
 
-dlistint_t *insert_doubleint_at_index(dlistint_t **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *ptr, *ptr_p, *new;
 	unsigned int i;
@@ -21,20 +22,20 @@ dlistint_t *insert_doubleint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	new->next = NULL;
 	new->n = n;
-	new-prev = NULL;
+	new->prev = NULL;
 
-	if (*head == NULL)
+	if (*h == NULL)
 	{
-		*head = new;
+		*h = new;
 		return (new);
 	}
 	
-	ptr = *head;
+	ptr = *h;
 	i = 0;
 	while (i < idx)
 	{
 		ptr = ptr->next;
-		i++
+		i++;
 	}
 
 	ptr_p = ptr->prev;
